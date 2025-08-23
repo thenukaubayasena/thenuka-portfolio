@@ -1,16 +1,16 @@
 # 👋 Hi, I'm Thenuka Dinujaya Ubayasena  
 
-🎓 Final-year Software Engineering Undergraduate | 💻 Full-Stack Developer | 🤖 ML & AI Enthusiast  
+🎓 Final-year Software Engineering Graduate | 💻 Full-Stack Developer | 🤖 UI/UX Designer  
 
-I’m passionate about building **practical, user-focused software solutions** that solve real-world problems. My work spans **full-stack development, web applications, intelligent chatbots, and educational recommender systems**.  
+I’m passionate about building **practical, user-focused software solutions** that solve real-world problems. My work spans **full-stack development, web applications, intelligent chatbots, and ui/ux designs**.  
 
 ---
 
 ## 🔥 About Me  
-- 🎓 Undergraduate at Informatics Institute of Technology (affiliated with University of Westminster)  
+- 🎓 Graduate at Informatics Institute of Technology (affiliated with University of Westminster)  
 - 💡 Interested in **Machine Learning, Educational Technology, and AI-driven systems**  
-- 🌱 Currently working on my **final-year project: An Educational Recommender System**  
-- 🛠️ Skilled in **Java, Python, React, Spring Boot, Flask, MySQL, and APIs**  
+- 🌱 Currently working on my **freelance projects**  
+- 🛠️ Skilled in **Java, Python, React, Node.js, HTML/CSS/JS, Spring Boot, Flask, MySQL, and APIs**  
 - 🌍 Based in Sri Lanka  
 
 ---
