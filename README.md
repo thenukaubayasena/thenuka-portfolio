@@ -50,7 +50,7 @@ A platform to assist Sri Lankan students in selecting suitable **A/L streams and
 ## 📫 Connect With Me  
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/thenuka-ubayasena)  
-- 📧 Email: **thenukaubayasena@gmail.com**  
+- 📧 Email: **ubayasenat@gmail.com**  
 - 🌐 [Portfolio Website](#) _(coming soon)_  
 - 🐙 GitHub: [thenukaubayasena](https://github.com/thenukaubayasena)  
 
