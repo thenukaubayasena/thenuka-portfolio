@@ -51,7 +51,7 @@ A platform to assist Sri Lankan students in selecting suitable **A/L streams and
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/thenuka-ubayasena)  
 - 📧 Email: **ubayasenat@gmail.com**  
-- 🌐 [Portfolio Website](#) _(coming soon)_  
+- 🌐 [Portfolio Website](https://thenuka-dinujaya.netlify.app/) 
 - 🐙 GitHub: [thenukaubayasena](https://github.com/thenukaubayasena)  
 
 ---
