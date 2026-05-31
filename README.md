@@ -1,59 +1,28 @@
-# 👋 Hi, I'm Thenuka Dinujaya Ubayasena  
+# Thenuka Ubayasena — Portfolio
 
-🎓 Final-year Software Engineering Graduate | 💻 Full-Stack Developer | 🤖 UI/UX Designer  
+Personal portfolio website with a black & white minimalist design.
 
-I’m passionate about building **practical, user-focused software solutions** that solve real-world problems. My work spans **full-stack development, web applications, intelligent chatbots, and ui/ux designs**.  
+## About
 
----
+I'm Thenuka Dinujaya Ubayasena, a management and marketing professional based in Kegalle, Sri Lanka. Currently working as a Wealth Planner Manager at AIA Sri Lanka, I focus on building meaningful client relationships and delivering tailored financial strategies. With a background in Software Engineering and experience in AI project management at Olee AI, I bring a tech-driven mindset to everything I do, from marketing strategy to client engagement.
 
-## 🔥 About Me  
-- 🎓 Graduate at Informatics Institute of Technology (affiliated with University of Westminster)  
-- 💡 Interested in **Machine Learning, Educational Technology, and AI-driven systems**  
-- 🌱 Currently working on my **freelance projects**  
-- 🛠️ Skilled in **Java, Python, React, Node.js, HTML/CSS/JS, Spring Boot, Flask, MySQL, and APIs**  
-- 🌍 Based in Sri Lanka  
+## Folder Structure
 
----
+```
+portfolio/
+├── index.html
+├── assets/
+│   ├── images/
+│   │   ├── thenuka.jpg
+│   │   └── gallery/
+│   │       └── photo1–5.jpg
+│   └── Thenuka Ubayasena CV.pdf
+```
 
-## 🚀 Projects  
+## Deploy
 
-### 🎓 A/L Stream & University Guidance Recommender  
-A platform to assist Sri Lankan students in selecting suitable **A/L streams and universities** based on their interests and performance.  
-- 🔹 Machine Learning models (stacking ensemble with Random Forest, XGBoost, Logistic Regression)  
-- 🔹 Flask-based chatbot with **Sentence-BERT & semantic search**  
-- 🔹 React frontend + Spring Boot backend  
-
-### 🤖 University Guidance Chatbot  
-- Conversational AI to guide students on **career paths and universities**  
-- Built with **Flask, Sentence-BERT, semantic search, and NLP**  
-
-### 💻 Other Projects  
-- Full-stack web applications (React + Spring Boot)  
-- Java projects with **JDBC, JavaFX, Multithreading, Exception Handling**  
-- Data preprocessing pipelines for **survey-based ML models**  
+Drag and drop the folder onto [netlify.com](https://netlify.com) — free and instant.
 
 ---
 
-## 🛠️ Tech Stack  
-
-**Languages & Frameworks:**  
-`Java` `Python` `JavaScript` `React` `Spring Boot` `Flask` `HTML` `CSS` `Bootstrap`  
-
-**Databases & Tools:**  
-`MySQL` `MongoDB` `Pandas` `NumPy` `scikit-learn` `XGBoost`  
-
-**Other Skills:**  
-`Machine Learning` `Data Preprocessing` `APIs` `UI/UX Design`  
-
----
-
-## 📫 Connect With Me  
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/thenuka-ubayasena)  
-- 📧 Email: **ubayasenat@gmail.com**  
-- 🌐 [Portfolio Website](https://thenuka-dinujaya.netlify.app/) 
-- 🐙 GitHub: [thenukaubayasena](https://github.com/thenukaubayasena)  
-
----
-
-⭐️ _“Turning ideas into simple, functional, and impactful solutions.”_
+*© 2026 Thenuka Ubayasena*
