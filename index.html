@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <title>Thenuka Ubayasena</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,7 @@
       pointer-events: none; z-index: 9999;
       transition: transform 0.15s ease, width 0.2s, height 0.2s, background 0.2s;
       transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
     }
     #cursor-ring {
       width: 36px; height: 36px;
@@ -50,6 +51,7 @@
       transform: translate(-50%, -50%);
       transition: transform 0.4s ease, width 0.3s, height 0.3s, opacity 0.3s;
       opacity: 0.5;
+      mix-blend-mode: difference;
     }
 
     /* ── NOISE OVERLAY ── */
@@ -68,7 +70,7 @@
       height: 72px;
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s, background 0.3s;
-      mix-blend-mode: normal;
+      background: rgba(245,245,240,0);
     }
     nav.scrolled {
       border-color: rgba(8,8,8,0.1);
@@ -119,7 +121,7 @@
     }
     .nav-resume:hover { background: transparent; color: var(--black); }
 
-    .hamburger { display: none; background: none; border: none; cursor: none; padding: 4px; flex-direction: column; gap: 5px; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
     .hamburger span { display: block; width: 24px; height: 1px; background: var(--black); transition: transform 0.3s, opacity 0.3s; }
 
     /* ── HERO ── */
@@ -306,6 +308,7 @@
       border: 1px solid var(--gray-light);
       padding: 2rem;
       transition: border-color 0.3s, transform 0.3s;
+      cursor: pointer;
     }
     .about-card:hover { border-color: var(--black); transform: translateY(-4px); }
     .about-card-icon {
@@ -348,6 +351,7 @@
       gap: 0.75rem;
       transition: background 0.25s;
       text-align: center;
+      cursor: pointer;
     }
     .skill-tile:hover { background: #111; }
     .skill-tile i { font-size: 1.5rem; color: var(--white); opacity: 0.7; }
@@ -484,6 +488,7 @@
       position: relative;
       background: var(--gray-dark);
       aspect-ratio: 1;
+      cursor: pointer;
     }
     .gallery-item:nth-child(1) {
       grid-column: span 2;
@@ -706,6 +711,11 @@
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .about-grid, .contact-grid { gap: 3rem; }
+      .skills-bars { gap: 2rem; }
+    }
+
     @media (max-width: 900px) {
       #hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
@@ -719,12 +729,32 @@
       .edu-item { grid-template-columns: auto 1fr; }
       .edu-year { grid-column: 2; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .timeline { padding-left: 0.5rem; }
+      .contact-big-text { font-size: 2rem; }
+      .section-inner { padding: 5rem 5vw; }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:nth-child(1) { grid-column: 1; }
-      .section-inner { padding: 5rem 5vw; }
+      .section-inner { padding: 4rem 5vw; }
+      .hero-name { font-size: 2.8rem; }
+      .section-title { font-size: 2rem; }
+      .timeline-role { font-size: 1.3rem; }
+      .about-body { font-size: 0.95rem; }
+      .contact-intro { font-size: 0.95rem; }
+      .edu-item { padding: 1.5rem; }
+      .nav { padding: 0 1rem; }
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+      .meta-item { font-size: 0.65rem; }
+    }
+
+    /* ── TOUCH DEVICE FALLBACK ── */
+    @media (hover: none) and (pointer: coarse) {
+      body { cursor: auto; }
+      #cursor, #cursor-ring { display: none; }
+      .hamburger { cursor: pointer; }
     }
   </style>
 </head>
@@ -756,7 +786,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="assets/Thenuka Ubayasena CV.pdf" download class="nav-resume">Resume ↓</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
     <span></span><span></span>
   </button>
 </nav>
@@ -795,7 +825,7 @@
             I'm Thenuka Dinujaya Ubayasena, a management and marketing professional with a sharp eye for client relationships and a deep curiosity for how technology can amplify human connection and business growth.
           </p>
           <p>
-            With a foundation in Software Engineering and hands-on experience in project management and AI, I now channel those analytical strengths into the world of wealth planning and financial services at AIA Sri Lanka, where I work to understand people's goals and build strategies that genuinely serve them.
+            With a foundation in Software Engineering and hands-on experience in project management and AI, now I channel those analytical strengths into the world of wealth planning and financial services at AIA Sri Lanka, where I work to understand people's goals and build strategies that genuinely serve them.
           </p>
           <p>
             I believe the best outcomes come from combining data-driven thinking with authentic relationship-building. Whether leading a team, crafting a marketing strategy, or sitting across from a client, I bring both precision and warmth.
@@ -1104,10 +1134,10 @@
           </div>
         </div>
         <div class="social-grid">
-          <a href="https://www.linkedin.com/in/thenuka-ubayasena/" class="social-btn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/thenukaubayasena" class="social-btn" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://web.facebook.com/thenuka.dinujaya.984963/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/thenukaa.d/" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/thenuka-ubayasena/" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/thenukaubayasena" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a href="https://web.facebook.com/thenuka.dinujaya.984963/" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/thenukaa.d/" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="contact-big-cta fade-up">
@@ -1125,21 +1155,55 @@
 </footer>
 
 <script>
-  /* ── Custom cursor ── */
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
-  function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateRing); }
-  animateRing();
-  document.querySelectorAll('a, button, .about-card, .gallery-item, .skill-tile').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.width = '56px'; ring.style.height = '56px'; ring.style.opacity = '0.8'; cursor.style.transform = 'translate(-50%,-50%) scale(0.5)'; });
-    el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '0.5'; cursor.style.transform = 'translate(-50%,-50%) scale(1)'; });
-  });
+  /* ── Check if device supports hover (mouse) ── */
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  
+  /* ── Custom cursor (only for non-touch devices) ── */
+  if (!isTouchDevice) {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    
+    document.addEventListener('mousemove', e => { 
+      mx = e.clientX; 
+      my = e.clientY; 
+      cursor.style.left = mx + 'px'; 
+      cursor.style.top = my + 'px'; 
+    });
+    
+    function animateRing() { 
+      rx += (mx - rx) * 0.12; 
+      ry += (my - ry) * 0.12; 
+      ring.style.left = rx + 'px'; 
+      ring.style.top = ry + 'px'; 
+      requestAnimationFrame(animateRing); 
+    }
+    animateRing();
+    
+    document.querySelectorAll('a, button, .about-card, .gallery-item, .skill-tile').forEach(el => {
+      el.addEventListener('mouseenter', () => { 
+        ring.style.width = '56px'; 
+        ring.style.height = '56px'; 
+        ring.style.opacity = '0.8'; 
+        cursor.style.transform = 'translate(-50%,-50%) scale(0.5)'; 
+      });
+      el.addEventListener('mouseleave', () => { 
+        ring.style.width = '36px'; 
+        ring.style.height = '36px'; 
+        ring.style.opacity = '0.5'; 
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)'; 
+      });
+    });
+  }
 
   /* ── Nav scroll style ── */
   const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+  let lastScrollY = 0;
+  window.addEventListener('scroll', () => { 
+    const currentScrollY = window.scrollY;
+    nav.classList.toggle('scrolled', currentScrollY > 40);
+    lastScrollY = currentScrollY;
+  });
 
   /* ── Mobile menu ── */
   let mobileOpen = false;
@@ -1147,15 +1211,31 @@
     mobileOpen = !mobileOpen;
     document.getElementById('mobileNav').classList.toggle('open', mobileOpen);
     const bars = document.querySelectorAll('.hamburger span');
-    if (mobileOpen) { bars[0].style.transform = 'rotate(45deg) translate(4px,4px)'; bars[1].style.transform = 'rotate(-45deg) translate(4px,-4px)'; }
-    else { bars[0].style.transform = ''; bars[1].style.transform = ''; }
+    if (mobileOpen) { 
+      bars[0].style.transform = 'rotate(45deg) translate(4px,4px)'; 
+      bars[1].style.transform = 'rotate(-45deg) translate(4px,-4px)'; 
+      document.body.style.overflow = 'hidden';
+    } else { 
+      bars[0].style.transform = ''; 
+      bars[1].style.transform = ''; 
+      document.body.style.overflow = '';
+    }
   }
-  function closeMobile() { mobileOpen = false; document.getElementById('mobileNav').classList.remove('open'); document.querySelectorAll('.hamburger span').forEach(s => s.style.transform = ''); }
+  function closeMobile() { 
+    mobileOpen = false; 
+    document.getElementById('mobileNav').classList.remove('open'); 
+    document.querySelectorAll('.hamburger span').forEach(s => s.style.transform = ''); 
+    document.body.style.overflow = '';
+  }
 
   /* ── Scroll animations ── */
   const fadeEls = document.querySelectorAll('.fade-up');
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    entries.forEach(e => { 
+      if (e.isIntersecting) { 
+        e.target.classList.add('visible'); 
+      } 
+    });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   fadeEls.forEach(el => obs.observe(el));
 
@@ -1179,8 +1259,25 @@
       if (!t) return;
       e.preventDefault();
       const offset = nav.offsetHeight;
-      window.scrollTo({ top: t.getBoundingClientRect().top + pageYOffset - offset, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: t.getBoundingClientRect().top + window.pageYOffset - offset, 
+        behavior: 'smooth' 
+      });
+      // Close mobile menu if open
+      if (mobileOpen) closeMobile();
     });
+  });
+
+  /* ── Close mobile nav on escape key ── */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileOpen) {
+      closeMobile();
+    }
+  });
+
+  /* ── Lazy load images ── */
+  document.querySelectorAll('img').forEach(img => {
+    img.loading = 'lazy';
   });
 </script>
 </body>
