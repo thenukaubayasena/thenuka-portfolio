@@ -1,4 +1,4 @@
-# Thenuka Ubayasena — Portfolio
+# Thenuka Ubayasena - Portfolio
 
 Personal portfolio website with a black & white minimalist design.
 
@@ -21,7 +21,7 @@ portfolio/
 
 ## Deploy
 
-Drag and drop the folder onto [netlify.com](https://netlify.com) — free and instant.
+Drag and drop the folder onto [netlify.com](https://netlify.com) - free and instant.
 
 ---
 
