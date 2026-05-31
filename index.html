@@ -717,9 +717,24 @@
     }
 
     @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 12vh 6vw 8vw; justify-content: flex-end; min-height: 100vh; }
+      #hero { 
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .hero-right { 
+        display: block;
+        height: 50vh;
+        order: -1;
+      }
+      .hero-right::after {
+        background: linear-gradient(to bottom, var(--white) 0%, transparent 30%);
+      }
+      .hero-left { 
+        padding: 3rem 6vw 8vw; 
+        justify-content: flex-start; 
+        min-height: auto;
+        order: 0;
+      }
       .about-grid, .skills-bars, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-cards { grid-template-columns: 1fr; }
       .nav-links, .nav-resume { display: none; }
@@ -732,9 +747,12 @@
       .timeline { padding-left: 0.5rem; }
       .contact-big-text { font-size: 2rem; }
       .section-inner { padding: 5rem 5vw; }
+      .hero-line { position: relative; bottom: auto; left: auto; margin-top: 2rem; }
+      .scroll-cue { bottom: 2rem; right: 5vw; }
     }
 
     @media (max-width: 600px) {
+      .hero-right { height: 40vh; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:nth-child(1) { grid-column: 1; }
       .section-inner { padding: 4rem 5vw; }
@@ -744,10 +762,18 @@
       .about-body { font-size: 0.95rem; }
       .contact-intro { font-size: 0.95rem; }
       .edu-item { padding: 1.5rem; }
-      .nav { padding: 0 1rem; }
+      nav { padding: 0 1rem; }
       .hero-ctas { flex-direction: column; }
       .btn-primary, .btn-ghost { text-align: center; }
       .meta-item { font-size: 0.65rem; }
+      .hero-left { padding: 2.5rem 5vw 6vw; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-right { height: 35vh; }
+      .hero-name { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .hero-eyebrow { font-size: 0.6rem; }
     }
 
     /* ── TOUCH DEVICE FALLBACK ── */
@@ -807,7 +833,7 @@
     <div class="hero-line">Kegalle, Sri Lanka</div>
   </div>
   <div class="hero-right">
-    <img src="assets/images/thenuka.jpg" alt="Thenuka Ubayasena">
+    <img src="assets/images/thenuka.jpg" alt="Thenuka Ubayasena" loading="eager">
   </div>
   <span class="scroll-cue">Scroll</span>
 </section>
@@ -1198,11 +1224,8 @@
 
   /* ── Nav scroll style ── */
   const nav = document.getElementById('mainNav');
-  let lastScrollY = 0;
   window.addEventListener('scroll', () => { 
-    const currentScrollY = window.scrollY;
-    nav.classList.toggle('scrolled', currentScrollY > 40);
-    lastScrollY = currentScrollY;
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 
   /* ── Mobile menu ── */
@@ -1273,11 +1296,6 @@
     if (e.key === 'Escape' && mobileOpen) {
       closeMobile();
     }
-  });
-
-  /* ── Lazy load images ── */
-  document.querySelectorAll('img').forEach(img => {
-    img.loading = 'lazy';
   });
 </script>
 </body>
